@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center"> Pokédex </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="content">
+    <div class="header">
+      <ion-button expand="full" color="secondary">Show teams</ion-button>
+    </div>
+
+    <div class="poke-list">
+      <ion-card>
+        <ion-item
+          *ngFor="let poke of pokemons"
+          (click)="pokeClick()"
+          class="ion-padding"
+        >
+          <ion-img
+            width="80"
+            height="80"
+            src="https://www.pokepedia.fr/Bulbizarre"
+          ></ion-img>
+          <ion-label>{{poke}}</ion-label>
+        </ion-item>
+      </ion-card>
+    </div>
+
+    <div class="poke-card">
+      <ion-card>
+        <ion-card-header>Nom pokemons</ion-card-header>
+        <ion-card-content>
+          <ion-img
+            width="400"
+            height="400"
+            src="https://www.pokepedia.fr/Bulbizarre"
+          ></ion-img>
+        </ion-card-content>
+        <ion-card-title>TEST</ion-card-title>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
