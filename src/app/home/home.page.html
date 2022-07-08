@@ -16,7 +16,7 @@
       <ion-card>
         <ion-item
           *ngFor="let poke of pokemons"
-          (click)="pokeClick()"
+          (click)="pokeClick(poke.id, poke.description)"
           class="ion-padding"
         >
           <ion-img width="80" height="80" src="{{poke.sprite}}"></ion-img>
@@ -24,19 +24,5 @@
         </ion-item>
       </ion-card>
     </div>
-
-    <!-- <div class="poke-card">
-      <ion-card>
-        <ion-card-header>Nom pokemons</ion-card-header>
-        <ion-card-content>
-          <ion-img
-            width="400"
-            height="400"
-            src="https://www.pokepedia.fr/Bulbizarre"
-          ></ion-img>
-        </ion-card-content>
-        <ion-card-title>TEST</ion-card-title>
-      </ion-card>
-    </div>-->
   </div>
 </ion-content>

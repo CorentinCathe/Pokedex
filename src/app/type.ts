@@ -2,8 +2,11 @@ export type Pokemon = {
   id: number;
   name: string;
   sprite: string;
-  types: string;
-  evolutionChain: number;
+  artwork?: string;
+  types: string[];
+  description?: string;
+  surname?: string;
+  evolutionChain?: number;
 };
 
 export type PokemonBasic = {

@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Pokecard</ion-title>
+    <ion-title (click)="navigate()">Pokecard</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="poke-card">
+    <ion-card *ngIf="pokemon">
+      <ion-img width="400" height="400" src="{{pokemon.artwork}}"></ion-img>
+      <ion-card-header>
+        <div class="type">
+          <ion-card-subtitle *ngFor="let type of pokemon.types"
+            >{{type}}
+          </ion-card-subtitle>
+        </div>
+        <ion-card-title>{{pokemon.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{pokemon.description}}</ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
