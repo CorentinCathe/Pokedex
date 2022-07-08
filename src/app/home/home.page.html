@@ -7,7 +7,9 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <div class="content">
     <div class="header">
-      <ion-button expand="full" color="secondary">Show teams</ion-button>
+      <ion-button expand="full" color="secondary" (click)="pokeClick()"
+        >Show teams</ion-button
+      >
     </div>
 
     <div class="poke-list">
@@ -17,17 +19,13 @@
           (click)="pokeClick()"
           class="ion-padding"
         >
-          <ion-img
-            width="80"
-            height="80"
-            src="https://www.pokepedia.fr/Bulbizarre"
-          ></ion-img>
-          <ion-label>{{poke}}</ion-label>
+          <ion-img width="80" height="80" src="{{poke.sprite}}"></ion-img>
+          <ion-label>{{poke.name}}</ion-label>
         </ion-item>
       </ion-card>
     </div>
 
-    <div class="poke-card">
+    <!-- <div class="poke-card">
       <ion-card>
         <ion-card-header>Nom pokemons</ion-card-header>
         <ion-card-content>
@@ -39,6 +37,6 @@
         </ion-card-content>
         <ion-card-title>TEST</ion-card-title>
       </ion-card>
-    </div>
+    </div>-->
   </div>
 </ion-content>

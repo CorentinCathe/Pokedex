@@ -12,6 +12,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'pokecard/:id',
+    loadChildren: () =>
+      import('./pokecard/pokecard.module').then((m) => m.PokecardPageModule),
+  },
 ];
 
 @NgModule({
