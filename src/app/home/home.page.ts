@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 import { ToastController } from '@ionic/angular';
 
-import { OpenTriviaService } from '../open-trivia.service';
+import { PokedexService } from '../pokedex.service';
+import { Pokemon } from '../type';
 
 @Component({
   selector: 'app-home',
@@ -12,17 +13,14 @@ import { OpenTriviaService } from '../open-trivia.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  pokemons: string[] = [
-    'Bulbizare',
-    'dracofeu',
-    'pingoleon',
-    'arceus',
-    'corentin',
-  ];
+  pokemons: Pokemon[] = [];
 
-  constructor() {}
+  constructor(private pokedexService: PokedexService) {}
 
-  pokeClick() {
-    console.log('hey');
+  async ngOnInit() {
+    this.pokemons = await this.pokedexService.getPokemons();
+    console.log(this.pokemons);
   }
+
+  async pokeClick() {}
 }
